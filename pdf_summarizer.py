@@ -70,19 +70,31 @@ def summary_text2(text):
     summarizer = LsaSummarizer()
     summary = summarizer(parser.document, sentences_count)
     return summary
-def main():
-    url_link = 'https://stmarysguntur.com/wp-content/uploads/2019/07/UNIT-1-converted-converted.pdf'
+def main(input_link):
+    # 'https://stmarysguntur.com/wp-content/uploads/2019/07/UNIT-1-converted-converted.pdf'
+    url_link = input_link
     get_pdf_from_url(url_link, '/Users/sophiajacob/Downloads/SummarizePDFProject/file.pdf')
     text = get_text_from_pdf('/Users/sophiajacob/Downloads/SummarizePDFProject/file.pdf')
+    result = ""
     if text != None:
         summary = summarize_text(text)
-        print("Summary: ")
+        result += "Summary: <br>"
+        # print("Summary: ")
         for i in summary:
-            print(i)
+            #print(i)
+            result += str(i)
+            result += "<br>"
         summary = summary_text2(text)
-        print()
-        print()
-        print("Second Summary: ")
+        result += "<br>"
+        result += "<br>"
+       # print()
+       # print()
+        result += "Second Summary: <br>"
+        # print("Second Summary: ")
         for i in summary:
-            print(i)
-main()
+            #print(i)
+            result += str(i)
+            result += "<br>"
+    return result
+    
+#main()

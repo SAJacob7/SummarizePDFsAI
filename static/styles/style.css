@@ -1,0 +1,16 @@
+.form-container {
+    width: 670px;
+    margin: 100px auto;
+    padding: 40px;
+}
+body {
+    background-image:url(background_image.jpg)
+}
+h1 {
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+h2 {
+    text-align: center;
+    color:white;
+}
