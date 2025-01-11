@@ -4,7 +4,7 @@ import pdf_summarizer
 app = Flask(__name__)
 
 @app.route('/')
-# ‘/’ URL is bound with hello_world() function.
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')

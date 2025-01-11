@@ -78,7 +78,7 @@ def main(input_link):
     result = ""
     if text != None:
         summary = summarize_text(text)
-        result += "Summary: <br>"
+        result += "<h1>Summary: </h1><br>"
         # print("Summary: ")
         for i in summary:
             #print(i)
@@ -89,7 +89,7 @@ def main(input_link):
         result += "<br>"
        # print()
        # print()
-        result += "Second Summary: <br>"
+        result += "<h1>Second Summary: </h1><br>"
         # print("Second Summary: ")
         for i in summary:
             #print(i)
