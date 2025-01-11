@@ -12,8 +12,11 @@ def index():
 @app.route('/submit_link', methods=['POST'])
 def submit_link():
     link = request.form['link']
-    result = pdf_summarizer.main(link)
-    return result
+    result, second_result = pdf_summarizer.main(link)
+    if second_result == False:
+        return render_template('error.html', result=result)
+    else:
+        return render_template('result.html', result=result, second_result=second_result)
 
 
 # main driver function

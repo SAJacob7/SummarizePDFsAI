@@ -73,28 +73,33 @@ def summary_text2(text):
 def main(input_link):
     # 'https://stmarysguntur.com/wp-content/uploads/2019/07/UNIT-1-converted-converted.pdf'
     url_link = input_link
-    get_pdf_from_url(url_link, '/Users/sophiajacob/Downloads/SummarizePDFProject/file.pdf')
-    text = get_text_from_pdf('/Users/sophiajacob/Downloads/SummarizePDFProject/file.pdf')
+    try:
+        get_pdf_from_url(url_link, '../SummarizePDFProject/file.pdf')
+    except:
+        result = "Invalid URL."
+        return (result, False)
+    text = get_text_from_pdf('../SummarizePDFProject/file.pdf')
     result = ""
+    second_result = ""
     if text != None:
         summary = summarize_text(text)
-        result += "<h1>Summary: </h1><br>"
+        #result += "<h1>Summary: </h1><br>"
         # print("Summary: ")
         for i in summary:
             #print(i)
             result += str(i)
-            result += "<br>"
+            #result += "<br>"
         summary = summary_text2(text)
-        result += "<br>"
-        result += "<br>"
+        #result += "<br>"
+        #result += "<br>"
        # print()
        # print()
-        result += "<h1>Second Summary: </h1><br>"
+        #result += "<h1>Second Summary: </h1><br>"
         # print("Second Summary: ")
         for i in summary:
             #print(i)
-            result += str(i)
-            result += "<br>"
-    return result
+            second_result += str(i)
+            #result += "<br>"
+    return (result, second_result)
     
 #main()
